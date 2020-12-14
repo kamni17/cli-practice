@@ -96,3 +96,4 @@ if (rates[I_Currency] == undefined)
 
 // This message should also include the original amount and currency information
 // supplied by the user.
+console.log('Final amount is ${finalResult} ${T_Currency}.');
