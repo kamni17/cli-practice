@@ -7,6 +7,9 @@
 // in a functional, testable program. However, please free to approach the problem
 // differently. There are many paths and approaches that result in a perfectly
 // valid finished product.
+// Invoke methods from another files
+    var { ValidateData } = require('./ValidateData');
+    var { DefineRate } = require('./DefineRate');
 
 // --------------------------------------------------
 // Step 1: Capture user input
@@ -14,7 +17,7 @@
 // In this step we will capture the command line  information supplied by the user.
 
 // We will store each piece of information in a dedicated variable for later use.
-
+    
 
 
 // --------------------------------------------------
