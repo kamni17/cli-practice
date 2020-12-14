@@ -9,15 +9,22 @@
 // of the function. In most cases the subject of a test will be defined in a separate
 // file. In this case we've defined the function and the corresponding test in the
 // same file for illustrative and learning purposes.
+var { DefineRate } = require('../src/DefineRate');
 
-function myCoolFunction() {
-  return 'Wow, what a cool function';
-}
+describe('DefineRate()', function() {
 
-describe('myCoolFunction()', () => {
-  test('should return the message: "Wow, what a cool function"', () => {
-    const result = myCoolFunction();
+  test('should return the correct rate when the rates, initial currency, and target currency are valid', function() {
+    var rates = {
+      USD: {
+        CAD: 1.7,
+      },
+    };
+    var initialCurrency = 'USD';
+    var targetCurrency = 'CAD';
 
-    expect(result).toBe('Wow, what a cool function');
+    var rate = DefineRate(rates, initialCurrency, targetCurrency);
+
+    expect(rate).toBe(1.7);
   });
+
 });
