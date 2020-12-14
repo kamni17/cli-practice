@@ -85,7 +85,7 @@ if (rates[I_Currency] == undefined)
 // information, and that a rate exists for each of the currencies.
 
 // Now we will compute the rate, apply it to the amount, and capture the result.
-    var rate = getRate(rates, I_Currency,T_Currency);
+    var rate = DefineRate(rates, I_Currency,T_Currency);
     var finalResult = amt * rate;
 
 
