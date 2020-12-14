@@ -34,6 +34,7 @@ var targetCurrency = process.argv[4];
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
 
+ValidateData(amt,InCurrency,targetCurrency); 
 
 
 // --------------------------------------------------
