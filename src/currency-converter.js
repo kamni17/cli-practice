@@ -20,9 +20,9 @@
 // Amount
 var amt = process.argv[2];
 //initial Currency
-var InCurrency = process.argv[3];
+var I_Currency = process.argv[3];
 // Target Currency
-var targetCurrency = process.argv[4];
+var T_Currency = process.argv[4];
     
 
 
@@ -66,7 +66,7 @@ var rate = {
 
 // If the user supplies an invalid initial or target currency, display a meaningful
 // warning message and exit the program.
-if (rate[Currency] == undefined)
+if (rates[I_Currency] == undefined)
 {
     console.log('Currency provided invalid', Currency);
     process.exit();
@@ -85,7 +85,8 @@ if (rate[Currency] == undefined)
 // information, and that a rate exists for each of the currencies.
 
 // Now we will compute the rate, apply it to the amount, and capture the result.
-
+    var rate = getRate(rates, I_Currency,T_Currency);
+    var finalResult = amt * rate;
 
 
 // --------------------------------------------------
