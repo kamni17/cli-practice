@@ -34,7 +34,7 @@ var targetCurrency = process.argv[4];
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
 
-ValidateData(amt,InCurrency,targetCurrency); 
+ValidateData(amt, InCurrency, targetCurrency); 
 
 
 // --------------------------------------------------
@@ -48,7 +48,14 @@ ValidateData(amt,InCurrency,targetCurrency);
 
 // The conversion rates do not have to be accurate, athough this resource contains
 // up-to-date rate information: https://www.xe.com/
-
+var rate = {
+    USD: {
+        CAD: 1.50,
+    },
+    CAD: {
+        USD: 0.75,
+    },
+   };
 
 
 // --------------------------------------------------
@@ -59,7 +66,16 @@ ValidateData(amt,InCurrency,targetCurrency);
 
 // If the user supplies an invalid initial or target currency, display a meaningful
 // warning message and exit the program.
+if (rate[Currency] == undefined)
+{
+    console.log('Currency provided invalid', Currency);
+    process.exit();
+}
 
+ if(rates[I_Currency]!==undefined && rates[I_Currency][T_Currency] === undefined){
+    console.log('The target currency provided is invalid',T_Currency);
+    process.exit();
+    }
 
 
 // --------------------------------------------------
